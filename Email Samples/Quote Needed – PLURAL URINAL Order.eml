@@ -1,0 +1,236 @@
+Delivered-To: pamelabaloyi898@gmail.com
+Received: by 2002:a05:7108:78c7:b0:558:f6bc:98b5 with SMTP id h7csp1742166gdu;
+        Mon, 6 Apr 2026 12:27:47 -0700 (PDT)
+X-Forwarded-Encrypted: i=3; AJvYcCXnPz/LC3up9yTcI8VtM39O+pxNQEmPxB7u/GEY0OLgvcKv+zxBVz7l3WBajnchxkHK/SZ4dzVFMar8H2oCf1E=@gmail.com
+X-Received: by 2002:a17:907:802:b0:b9c:692a:4157 with SMTP id a640c23a62f3a-b9c692a5038mr628176466b.10.1775503666989;
+        Mon, 06 Apr 2026 12:27:46 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1775503666; cv=fail;
+        d=google.com; s=arc-20240605;
+        b=eLUwA8eCrfJrzCMaBChJ/H3TXXqzLY4iSIh2cpBFoQ72JDcJTVxtkxwkwKq4CiIQlA
+         F/F6Xhi0jrOgQVqOnoK0OUBQq2MXOhWHFoP/8S9MO3Z3tIp78ucaflcY+OTstODZEwHt
+         xNjJWM2EnxxezhxTPUz85hmE8sIfSbAXVKDWamNSKWkyZLCQN9yfMJg3f/dCKlprc58l
+         BhC4CgBPXwDTFwebnZ4kqmz7BAfeHb62xsmIYtPCtic7ETa1EvlE4I5rtx8iWmz0gQgm
+         6OPIdGBUlsrVmqbd3d5K+QMEfRX64APniJRg0O8i5tCVd+Vl614zk1yCHs0+vVZmaw+P
+         2Tug==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:from:dkim-signature
+         :dkim-signature;
+        bh=wkaYljE0/jBVf5RFyGTu35UwOITiCNPVyXpgffUV/9M=;
+        fh=zEMK+f3w3jEJ+rVETDLljm1MjZ16EIk9osNt+OMcE4w=;
+        b=ReH2ZB/AkayHGYgiyC54XPRBgZbMmznrOgnXXua63CKQ9M/Qm1lvB5Di9eTTO5Wk8Q
+         z1koPXXIFeU+FYGsr4QoqSwX2og3xGWc5JCvAcx442yfXZn5P5bZzb6ZT9+QPOoUrrdJ
+         Foyg4XcqH847YaG8/m8k9pzVdp58GFZoQwFOPGPX8XN3nxLWaPpB4YByvpAYofC4u6mn
+         42SVvPrHIEx5sbgiRK/2NmhBQGiK/iFNAlVJOlamLmM2ehUhQJ9p6y7dWgbPNqBlH6xh
+         HtQzWKrSsNMsdkPnkiMMXbjl41G49aMoJ/KhU6yJi5U6agd0Z5CvYL4Zy3wLBKc+wxZq
+         D2Zw==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@saps.gov.za header.s=S3ps32024acc33ss header.b=TyeHIWH1;
+       dkim=neutral (body hash did not verify) header.i=@sapsgov.onmicrosoft.com header.s=selector1-sapsgov-onmicrosoft-com header.b=BDKRsZCh;
+       arc=fail (body hash mismatch);
+       spf=pass (google.com: domain of versters@saps.gov.za designates 195.245.231.2 as permitted sender) smtp.mailfrom=VersterS@saps.gov.za;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=saps.gov.za
+Return-Path: <VersterS@saps.gov.za>
+Received: from mail1.bemta39.messagelabs.com (mail1.bemta39.messagelabs.com. [195.245.231.2])
+        by mx.google.com with ESMTPS id a640c23a62f3a-b9c3d06dd8esi747386966b.205.2026.04.06.12.27.42
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 06 Apr 2026 12:27:46 -0700 (PDT)
+Received-SPF: pass (google.com: domain of versters@saps.gov.za designates 195.245.231.2 as permitted sender) client-ip=195.245.231.2;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@saps.gov.za header.s=S3ps32024acc33ss header.b=TyeHIWH1;
+       dkim=neutral (body hash did not verify) header.i=@sapsgov.onmicrosoft.com header.s=selector1-sapsgov-onmicrosoft-com header.b=BDKRsZCh;
+       arc=fail (body hash mismatch);
+       spf=pass (google.com: domain of versters@saps.gov.za designates 195.245.231.2 as permitted sender) smtp.mailfrom=VersterS@saps.gov.za;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=saps.gov.za
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=saps.gov.za;
+	s=S3ps32024acc33ss; t=1775503662; i=@saps.gov.za;
+	bh=wkaYljE0/jBVf5RFyGTu35UwOITiCNPVyXpgffUV/9M=;
+	h=From:Subject:Date:Message-ID:Content-Type:MIME-Version:To;
+	b=TyeHIWH1I2Xmr8uLuQgkl/AeRbpYUDf1JVvTQgdVp7EW5Uk+99Tvm/0DV/gKFbHLu
+	 8oAeJVPvUZPVxPQ/z8Leg7wsRPlxvmFQyr4vxhmjS7SHTdSjFdlUUCoTX9kDc4gKxv
+	 si5Jy352gJsrSqYPBMjIEm+zXQO9M/pJpwD9grRoMEu6uQGQYw4m87Inbk6cPXfNm3
+	 kDGaO7gTZGD6mezRKsj80Dlu9k//Q+gcqnaSd3ovpQ3hN0rOSFEaeg0Xp+tF8nlUjk
+	 bRDuxgEGfdCtTrs1rwThvzTmICix15IklZx0o4hlNfyI3kbgVYRHLHeFZlmTagrEOi
+	 2tGhqiVknJp3Q==
+X-Brightmail-Tracker: H4sIAAAAAAAAA1WTf0wTZxjHee+u7dnR5SgQXpglsSOMbbb80GW
+  nc1HiTCQ6A0s00TlHkYOeltLclQn8IYUgOpimTpzQoEioTBAQQQdE2KCMICBIpBlIQX6HgMrP
+  Jg6YsDsOHfvnyef7fp/3+T6XvIej8laJD04lGilGr9EpxVIs4PTFr1QBm+x00JWSENJcPouR1
+  Ys3ULLjbhpCpnXlAzLjgg0jJ20WEblSmAHI1IVxEVljqsNI6+QsSl6amABkVXqmmFwqGQbk8h
+  wnJ84NSMjVqiEJWd88IiYfmjrFZE/5NEY+taaiezz211oGJOHgmIjWR8UnRoq0OdmDYsPF9xL
+  fLDqBCVRKM4EUB0QRClfGTYggCkXw+d0KVBBXEPjieouYFxjhwGCrKVvCCznxCwLbXvVhgrAi
+  8EnHS8ALSLQBOHHBvN7WCWDp6DQQRDYCu5/1cM4mTjgBdFwOEox5ANv/dqwPuwqgKecJyneJi
+  UB47VUxxzjuTuyBi4UMf+xB7IM95vOowGp4q78R4Rkj/ODI1UoxzzJiJzRl1gOeAaGAjfeda4
+  wSXrBvLH+tHxIEtNYJUZDwhJOjKyKBlbBh5VdE6I+EJTXZqDDTDbbmjmFC7maYY84XCx+zBeb
+  82C4R7nrDv551rbMCNnfkYQKHwoX0AiDw17AptW491x9m5C0hZhBs2bCeZUO0ZUO0cB4EZzrz
+  UYE/hUUFL9Y5EN5zdoCN5zeBpASQLMX8QDGqz9RRDB2rNcZpaJ1ak6zSqKkEJt5Aqc5QrHG7O
+  vakQU2xrJpNijupi1brKWMl4N6tdDY8rAaUWjMCbcAbR5SeMstMNy1/Pyo+OkmrYbXfMwk6ir
+  WBzTiuhLI3mJ2WuzFULJUYQ+u41//Whrir0kPmXOWuyliDJo6lYwWrDRzAq2v/qEfx142tXF2
+  w2bla3MTXh2v1dXFfAyrH9PF6ysdL5pBwCQQ/Qpugfxfw9g97ChQ+7jLg4uIidzVQTBxt/L8/
+  BbxwoHSXDfBTXGm98d0eU9yKCLdi9J9d/IpGzX+WjwnxSD9wLP2j/rqyuaH9yX7z/jlz3rc0K
+  fMj7cNHjl5O6IAfp2w7eGqhN8vzcdLk5KP+wWbxnR2+vysSWiqaHjyPj2gM6xlsORvwgPb/IP
+  nnvba4NPawYqi71qGz37w+PU1tadFUGqzuNdP3AkYK3K4dMVQ8LvL7Liox2mI7y0REjI41lHt
+  IkfEhX/9Q39yolK2OvS9/i6lzfqsVx4yHBd/xCf1weNll+6HboPfE8S/CnbvKb3w51RuzXH1C
+  WhrJpG7d53I6b6YR7D4TCcbPWe6rDh7qlUvKHLuy7LurgttXZ6jCvm/On1Itle1s6uq59E+rP
+  MucO/zT8fIdhx8pQjLsIdsknysxVqsJ/gRlWM2/N6MykdwEAAA=
+X-Env-Sender: VersterS@saps.gov.za
+X-Msg-Ref: server-10.tower-878.messagelabs.com!1775503655!142326!1
+X-Originating-IP: [40.107.141.68]
+X-SYMC-ESS-Client-Auth: mailfrom-relay-check=pass
+X-StarScan-Received:
+X-StarScan-Version: 9.122.0; banners=saps.gov.za,-,-
+X-VirusChecked: Checked
+Received: (qmail 18452 invoked from network); 6 Apr 2026 19:27:36 -0000
+Received: from mail-southafricanorthazon11011068.outbound.protection.outlook.com (HELO JN3P275CU003.outbound.protection.outlook.com) (40.107.141.68)
+  by server-10.tower-878.messagelabs.com with ECDHE-RSA-AES256-GCM-SHA384 encrypted SMTP; 6 Apr 2026 19:27:36 -0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=UJfRK/HBSESold8LmRiblwtoB4GGjr/5Nb0js2Rj6FP9IWXqT48uRmF1Qihn+ru6rexFEGgdU0Kq72mvnhLD/lC8+uUTv4BFCUSNVbVJ5FzlOqxSH9Joh88ZQsB3//ZUIkCzrVuRe7xw5UTPTH8h8wWDf+otfnQkouYobLD3u9KJ4hNiIOMu0dyHe02Z4YtvztAtT7tde9L18gzrzgzVlWhzLbH4fTz19RHJUiPJTHAVDoqdzfuiNgY9eLS0IeWeCjvgqEqxabRMr3iv2GHhZs2kIMt8JBqJPNfnV7TGRVIG/RlXGI+kFs/r5Og53Ck5msASBLZyeemE5S8V1vG5VQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=6p+4qcPn6ZAHZeKYBNLqJYx4koXL8U791DynNBO/8pY=;
+ b=An0Bbnkq3Z6D9Z6PJeZhQ7bNKICdR89kDgOr6srZerUO6MHoJSdDhAY9qjuXq9YSQMs561nmY4xWNBy+Br/kCvmsOPPb/k2hAGh4F1fvUDHeX9V0o4fRjQDpaKHlE1mpEAqByWf9iZ7aG0r0sNRlLawzJRcZCA49dw86FnmvKqnWyxKfBU3GA88T4+32YtL9vLMYbQl0woouZ9mvK7W8RtJb3mH+hEKiLTQZKZZJSiG8Q3vaJ85dLKzMCPHFOhKzQyh8YMM/EAMc2rqPL1Unx+7P0llye7rBt2gF8l6QlElNtqOWmLgxAn+x0/1lx2uvNsi6b7ls0ovJWpNmcOlPrQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=fail (sender ip is
+ 164.151.129.225) smtp.rcpttodomain=gmail.com smtp.mailfrom=saps.gov.za;
+ dmarc=fail (p=reject sp=reject pct=100) action=oreject
+ header.from=saps.gov.za; dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=sapsgov.onmicrosoft.com; s=selector1-sapsgov-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=6p+4qcPn6ZAHZeKYBNLqJYx4koXL8U791DynNBO/8pY=;
+ b=BDKRsZCh4ZCmwebEug6+yaprQ4OTLlvFUatWGbhXlSf3fAN6kR7P22N9PD6NGwlNIP7qa5x/jXJdFjoQVo/l55YpUV3Upvsky8MBnStJCS84V3V83d6sHIfmTfUkyEC0jpLG8dd7DdPWBB6Wrj6UEXqRCt44nu86PQ439nZuJ2xuH2SxstKb+IvFV/WWoLGQUgFA7daLevYX6yxS5mQs8SGAwvNheDtuxtk6YsCtetDgTKIh5omEmCUX+/wbOvouBfSt1WINRF+Cm6aDe/8bUVNguMuy7H6QnDfHFAYmBRZWvIsJ/X15zKlHtDr4/PBxYTrArhDchUrgWymaBer3cg==
+Received: from JNAP275CA0023.ZAFP275.PROD.OUTLOOK.COM (2603:1086:0:4d::16) by
+ JN1P275MB2967.ZAFP275.PROD.OUTLOOK.COM (2603:1086:0:e1::5) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9769.19; Mon, 6 Apr 2026 19:27:30 +0000
+Received: from JN1PEPF00001EDD.ZAFP275.PROD.OUTLOOK.COM
+ (2603:1086:0:4d:cafe::8a) by JNAP275CA0023.outlook.office365.com
+ (2603:1086:0:4d::16) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9769.32 via Frontend Transport; Mon,
+ 6 Apr 2026 19:27:05 +0000
+X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 164.151.129.225)
+ smtp.mailfrom=saps.gov.za; dkim=none (message not signed)
+ header.d=none;dmarc=fail action=oreject header.from=saps.gov.za;
+Received-SPF: Fail (protection.outlook.com: domain of saps.gov.za does not
+ designate 164.151.129.225 as permitted sender)
+ receiver=protection.outlook.com; client-ip=164.151.129.225;
+ helo=www.saps.gov.za;
+Received: from www.saps.gov.za (164.151.129.225) by
+ JN1PEPF00001EDD.mail.protection.outlook.com (10.167.240.22) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9769.17 via Frontend Transport; Mon, 6 Apr 2026 19:27:30 +0000
+Received: from V23-09439MAI20.saps.gov.za (10.1.200.135) by
+ V01-06325HYB24.saps.gov.za (172.16.100.148) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.17; Mon, 6 Apr 2026 21:27:30 +0200
+Received: from V23-09439MAI20.saps.gov.za (10.1.200.135) by
+ V23-09439MAI20.saps.gov.za (10.1.200.135) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.17; Mon, 6 Apr 2026 21:27:29 +0200
+Received: from V23-09439MAI20.saps.gov.za ([::1]) by
+ V23-09439MAI20.saps.gov.za ([::1]) with mapi id 15.02.2562.017; Mon, 6 Apr
+ 2026 21:27:29 +0200
+From: "FS:Rouxville SCM" <VersterS@saps.gov.za>
+Subject: =?Windows-1252?Q?Quote_Needed_=96_PLURAL_URINAL_Order?=
+Thread-Topic: =?Windows-1252?Q?Quote_Needed_=96_PLURAL_URINAL_Order?=
+Thread-Index: AQHcxftmfnQ+BAPWUkyWG2e19n44Zg==
+Date: Mon, 6 Apr 2026 19:27:29 +0000
+Message-ID: <d1c8112152a94eeaa84e6f211fce6f21@saps.gov.za>
+Accept-Language: en-US, en-ZA
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [192.168.33.233]
+Content-Type: multipart/alternative;
+	boundary="_000_d1c8112152a94eeaa84e6f211fce6f21sapsgovza_"
+MIME-Version: 1.0
+To: Undisclosed recipients:;
+Return-Path: VersterS@saps.gov.za
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: JN1PEPF00001EDD:EE_|JN1P275MB2967:EE_
+X-MS-Office365-Filtering-Correlation-Id: ff4bb941-9db3-4f3a-bdf8-08de94128bbe
+X-MS-Exchange-AtpMessageProperties: SA
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|376014|36860700016|39142699007|82310400026|31052699007|1800799024|7416014|27013499003|56012099003|18002099003|8096899003|55112099003;
+X-Microsoft-Antispam-Message-Info:
+	ECV9hB+5umGiGGvR7ZJkMqJfLvyCuA0Guh+YkTiPipAapKr0am52MHqViunjPFEgmcdMGwDirvjAUjrVNEACP/YJ18F7+YE2SPBAfABsUjlSV62cuKrJxi8Seqb/FG274h1ulXmjsE2B5tc7pmgG+uqpjMQtS06DLw5AO5JoHUEp/RWh3Ab45wOLAXut67yad6R2GCA7Bf8wBLlehbLWYNNpi916l4z3b/SQWl1yIBpP6lI0p5ckXybbsxoO2/QQZ1ZrhM7PEYXAKEb6pERtFVPhFSvrZGN5ZYII4i7KwUZnS3VeOgmPFiVnFqh7LGCg960nZTreg3l9OEWCCSGzI9h1rOSIHcrMQ5xteID33kd8TfASpCRAp96Qn9eSkGn2MTL+pOR3La+3i5wTem5JpAl3W89WLinww9Q6RSWO3UFs35MhNir+jeLvP7Tb6Wk0b9LlDQ1qHQfeFf1SwZ6DxDhEEYj9nPLNn0DOHfxxF4WL4bmdCy2Swkdj/rznnFAT4i+5XOUP4HoL1fmTQ9I/aTrqf6MVAoP1UZeshargHRCEWcVn4Fdd5K/fhrBv/IrM9WXphOd0BSzUAbGSpLA8n3U54ZHK9K7KjhD8BwhSMtgyMtLtMzKv3i1zi5grE+25HNb6zGou0qNai1GodCbjZFe2GqcUb/ETem04tXNG4gu3cnMa2z2NJo3nK7SzftH8baZA1JqHk36dx5RpZST/8WlOTUzzuf9EFRLm6dw55E7yP9JxvXUg7WvbNhoLkAWhu0RSFYAM/wDmTgen6EnAKQ==
+X-Forefront-Antispam-Report:
+	CIP:164.151.129.225;CTRY:ZA;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:www.saps.gov.za;PTR:164.151.129.225.static.gov.za;CAT:NONE;SFS:(13230040)(376014)(36860700016)(39142699007)(82310400026)(31052699007)(1800799024)(7416014)(27013499003)(56012099003)(18002099003)(8096899003)(55112099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:
+	1LP3Rye9BvFHUNbbv+0q3D58KmC8/U3ooKXlTji+h11/ifb09LI4vJM0BuAsk6AHNW8MrXN55TcdFf1W+Ucn9RijKy78VC6ywfsrKh11QA9IXv/RqT2RKAL9AM7rWpKxzQvtNM5obhDRkmUwHxi3uV1y0+CnvQtre/3VWLWuM6b4ActDCekl5DDDBBOiMATSKTJISZzi/kk68kzYmlp6d1svwhFMheTNkMcZnEVWUyfkuiSqUAiy5Q68A3ubDauRVl4f5U2hOvWBWsItOZkAfj2R+eZVT5RwbYWeOzMxuSpUQpx/2qO0HJc4dNH1MCGEpEPmIzubr7WwH/iZAlMJB/NQqmDpfSLfDz51zH1e5xqsY3ixqmhLzzVbyqva97zX5cSp0xpTyQJzWH/7npklKyu0JzRnSJZhfAe7sLuCt9yYZwXWpmSsQp/KpaTFgTr8
+X-Exchange-RoutingPolicyChecked:
+	WEzfYnxMN4hTiJivyNQjkul01noyke3nzHGQjnXIHCd+dsHy4HrtEhaD63bcws2YmXx4+gtbcrde3NtU6J52chSwcSfObEjm+gWwLUM7inVHFrnXnm0ly8RwiZEBCmVpXLGgHlCp5numXNwwFWQR0p+E397MMgB1BhwAIJvO10EV176hWgOua0+n6T8viqOzIg3I/rbhqwM7FWCO41Cs35NL/kyNnQjOGyj5cP+U+I0vMLMkKKL26avw79azLjOCU5Fvwu4x4MnK2Jd7FosNcAury/Ze72UrTufnEK1nnelFtdkx6uyHVW9SfEuAU5yjQKKgMB42/+t2GaPTAip5gw==
+X-OriginatorOrg: saps.gov.za
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Apr 2026 19:27:30.7810
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: ff4bb941-9db3-4f3a-bdf8-08de94128bbe
+X-MS-Exchange-CrossTenant-Id: 5f8658c1-506f-474a-9e6e-728ea922a0fc
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=5f8658c1-506f-474a-9e6e-728ea922a0fc;Ip=[164.151.129.225];Helo=[www.saps.gov.za]
+X-MS-Exchange-CrossTenant-AuthSource: JN1PEPF00001EDD.ZAFP275.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: JN1P275MB2967
+
+--_000_d1c8112152a94eeaa84e6f211fce6f21sapsgovza_
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+Please send your quotation for supply and delivery of 45 PLURAL URINAL VM =
+BLACK.
+
+Regards
+
+This e-mail and any attachments thereto are strictly confidential and are =
+intended solely for the use of the addressee. Should you not be the intend=
+ed addressee, please delete this e-mail message immediately. While care is=
+ taken in preparing this document, no representation, warranty or undertak=
+ing (expressly or implied) is given and no responsibility nor liability is=
+ accepted by the SAPS as to the accuracy of the information contained here=
+in, that the email is free of viruses, or for any damages that may occur f=
+rom receiving or opening this email.
+--_000_d1c8112152a94eeaa84e6f211fce6f21sapsgovza_
+Content-Type: text/html; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-=
+1252">
+<style type=3D"text/css" style=3D"display:none;"><!-- P {margin-top:0;marg=
+in-bottom:0;} --></style>
+</head>
+<body dir=3D"ltr">
+<div id=3D"divtagdefaultwrapper" style=3D"font-size:12pt;color:#000000;fon=
+t-family:Calibri,Helvetica,sans-serif;" dir=3D"ltr">
+<p></p>
+<p class=3D"MsoNormal">Please send your quotation for supply and delivery =
+of 45 PLURAL URINAL VM BLACK.<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<span style=3D"font-size:11.0pt;line-height:107%;font-family:&quot;Calibri=
+&quot;,sans-serif;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:Calibri;mso-farea=
+st-theme-font:
+minor-latin;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Ti=
+mes New Roman&quot;;
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-languag=
+e:
+EN-US;mso-bidi-language:AR-SA">Regards</span><br>
+<p></p>
+</div>
+<br clear=3D"both">
+This e-mail and any attachments thereto are strictly confidential and are =
+intended solely for the use of the addressee. Should you not be the intend=
+ed addressee, please delete this e-mail message immediately. While care is=
+ taken in preparing this document, no representation, warranty or undertak=
+ing (expressly or implied) is given and no responsibility nor liability is=
+ accepted by the SAPS as to the accuracy of the information contained here=
+in, that the email is free of viruses, or for any damages that may occur f=
+rom receiving or opening this email.<BR>
+</body>
+</html>
+
+--_000_d1c8112152a94eeaa84e6f211fce6f21sapsgovza_--
